@@ -32,7 +32,7 @@ class GetData {
     .getLines()
     .drop(1)
     .map(line => line.split(","))
-    .map(a => Trip(a(0).toInt, a(1), a(2), a(3), a(4), a(5), a(6))).toList
+    .map(a => Trip(a(0).toInt, a(1), a(2), a(3), a(4), a(5), a(6), a(7),a(8))).toList
 
 
 }

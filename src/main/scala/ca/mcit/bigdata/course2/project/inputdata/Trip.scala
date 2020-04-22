@@ -7,7 +7,7 @@ case class Trip(route_id:Int,
                 direction_id:String,
                 shape_id:String,
                 wheelchair_accessible:String,
-                note_fr: Option[String]=None,
-                note_en:Option[String]= None)
+                note_fr: String,
+                note_en:String)
 
 
