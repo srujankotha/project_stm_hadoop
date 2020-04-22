@@ -10,17 +10,13 @@ import scala.collection.mutable.ListBuffer
 object Enricher extends App{
 
   val readData : GetData = new GetData
-
   val tripList: List[Trip] = readData.getTripList
   val routeList: List[Route] = readData.gRouteList
   val calanderList: List[Calender] = readData.getCalenderList
-
   val routeLookup = new RouteLookup(routeList)
   val calenderLookUp = new CalendarLookup(calanderList)
-
   val enrichedTripRoute: List[TripRoute] = tripList.map(trip => TripRoute(trip,
     routeLookup.lookup(trip.route_id)))
-
   val enrichedTrip: List[EnrichTrip] = enrichedTripRoute.map(tripRoute => EnrichTrip(tripRoute,
     calenderLookUp.lookup(tripRoute.trips.service_id)))
 
